@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast.js')
 
 const app = express()
 
+const port = process.env.PORT
+
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -130,8 +132,8 @@ app.get('*', (req, res) => {
 
 // para inicializar:
 
-app.listen(3000, () => { // 3000 es el puerto (local en mi compu)
-    console.log('Server is up on port 3000')
+app.listen(port, () => { // 3000 es el puerto (local en mi compu)
+    console.log('Server is up on port ' + port)
 })
 
 // HASTA ACÁ LO QUE HIZO ESTO FUE QUE CUANDO YO BUSQUE EN MI COMPU localhost:3000 (en google) ME APARECIO LA PAGINA OCN EL MENSAJE DE HELLO EXPRESS
